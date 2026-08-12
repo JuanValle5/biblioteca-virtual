@@ -5,8 +5,10 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Getter
@@ -27,9 +29,15 @@ public class Author {
     @NotBlank(message = "El nombre debe ser obligatorio")
     private String name;
 
+    private LocalDate birthDate;
+
+    private LocalDate deathDate;
+
     @Column(nullable = false)
     @NotBlank(message = "La nacionalidad debe ser obligatoria")
     private String nationality;
+
+    private String photoUrl;
 
     @OneToMany(mappedBy = "author")
     @Builder.Default
