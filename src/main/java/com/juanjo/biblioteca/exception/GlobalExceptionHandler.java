@@ -16,6 +16,9 @@ public class GlobalExceptionHandler {
         if (detail.contains("idx_book_title")){
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Ya existe un libro con ese título y autor");
         }
+        if (detail.contains("idx_book_isbn")){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Ya existe un libro con ese isbn");
+        }
         return ResponseEntity.status(HttpStatus.CONFLICT).body(
                 "No se puede completar la operación porque otros registros dependen de este recurso"
         );

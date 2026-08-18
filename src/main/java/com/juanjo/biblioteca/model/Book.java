@@ -17,7 +17,8 @@ import java.time.LocalDate;
 @Table(
         name = "book",
         indexes = {
-                @Index(name = "idx_book_title", columnList = "title, author_id, isbn",unique = true)
+                @Index(name = "idx_book_title", columnList = "title, author_id",unique = true),
+                @Index(name = "idx_book_isbn", columnList = "isbn", unique = true)
         }
 )
 public class Book {
