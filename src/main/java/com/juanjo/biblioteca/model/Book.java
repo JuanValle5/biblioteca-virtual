@@ -56,9 +56,11 @@ public class Book {
     @Enumerated(EnumType.STRING)
     private Genre genre;
 
-    private String publisher;
+    @Builder.Default
+    private String publisher = "";
 
-    private Double rating;
+    @Builder.Default
+    private Double rating = 0.0;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
@@ -66,7 +68,8 @@ public class Book {
 
     @Column(nullable = false)
     @NotNull
-    private Boolean read;
+    @Builder.Default
+    private Boolean read = false;
 
 }
 

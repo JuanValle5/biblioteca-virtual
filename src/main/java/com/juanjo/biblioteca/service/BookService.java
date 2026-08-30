@@ -33,8 +33,14 @@ public class BookService {
 
         Book book = Book.builder()
                 .title(dto.title())
-                .author(author)
+                .isbn(dto.isbn())
+                .description(dto.description())
+                .publicationDate(dto.publicationDate())
                 .pages(dto.pages())
+                .language(dto.language())
+                .genre(dto.genre())
+                .publisher(dto.publisher())
+                .author(author)
                 .read(dto.read())
                 .build();
 
